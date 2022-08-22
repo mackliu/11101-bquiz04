@@ -31,7 +31,7 @@
         </div>
         <div id="left" class="ct">
             <div style="min-height:400px;">
-            選單區
+            <a href="#">全部商品(8)</a>
             </div>
             <span>
                 <div>進站總人數</div>
