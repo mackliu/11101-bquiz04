@@ -31,9 +31,22 @@
 
         $.get("./api/ans.php",{ans},(chk)=>{
             if(parseInt(chk)===1){
-                alert("正確")
+                $.get("./api/login.php",user,(chk)=>{
+                    if(parseInt(chk)===1){
+                        switch(table){
+                            case 'mem':
+                                location.href='index.php'
+                            break;
+                            case 'admin':
+                                location.href='back.php'
+                            break;
+                        }
+                    }else{
+                        alert("帳號或密碼有誤")
+                    }
+                })
             }else{
-                alert("驗證碼錯誤,請重新輸入")
+                alert("對不起，您輸入的驗證碼有誤請您重新登入")
             }
         })
 
