@@ -6,13 +6,21 @@
         <td>註冊日期</td>
         <td>操作</td>
     </tr>
+    <?php
+    $rows=$Mem->all();
+    foreach($rows as $row){
+    ?>
     <tr class="pp ct">
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><?=$row['name'];?></td>
+        <td><?=$row['acc'];?></td>
+        <td><?=$row['regdate'];?></td>
         <td>
             <button>修改</button>
             <button>刪除</button>
         </td>
     </tr>
+    <?php
+    }
+
+    ?>    
 </table>
