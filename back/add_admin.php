@@ -1,4 +1,5 @@
 <h2 class="ct">新增管理帳號</h2>
+<form  id="addForm" action="./api/add_admin.php" method="post">
 <table class="all">
     <tr>
         <td class="ct tt">帳號</td>
@@ -29,3 +30,9 @@
         </td>
     </tr>
 </table>
+
+<div class="ct">
+    <button type="submit">新增</button>
+    <button type="reset">重置</button>
+</div>
+</form>
