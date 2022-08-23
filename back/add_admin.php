@@ -1,5 +1,5 @@
 <h2 class="ct">新增管理帳號</h2>
-<form  id="addForm" action="./api/add_admin.php" method="post">
+<form  id="addForm" action="./api/save_admin.php" method="post">
 <table class="all">
     <tr>
         <td class="ct tt">帳號</td>
