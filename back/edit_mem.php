@@ -41,8 +41,9 @@ function edit(table ,id){
     let form=$("#editForm input").serializeArray()
 
     $.post("./api/edit.php",{table,form,id},(res)=>{
+        //console.log(res)
         location.href=`?do=${table}`;
-        //location.href='?do=mem';
+
     })
 }
 
