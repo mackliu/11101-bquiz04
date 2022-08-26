@@ -38,7 +38,9 @@ if (empty($_SESSION['cart'])) {
                 <td><?= $row['price']; ?></td>
                 <td><?= $row['price'] * $qt; ?></td>
                 <td>
-                    <img src="./icon/0415.jpg" alt="">
+                    <a href="#" onclick="delGoods(<?=$row['id'];?>)">
+                        <img src="./icon/0415.jpg" alt="">
+                    </a>
                 </td>
             </tr>
 
@@ -52,3 +54,10 @@ if (empty($_SESSION['cart'])) {
         <a href="index.php"><img src="./icon/0411.jpg" alt=""></a>
         <a href="?do=checkout"><img src="./icon/0412.jpg" alt=""></a>
     </div>
+    <script>
+        function delGoods(id){
+            $.post("./api/del_goods.php",{id},()=>{
+                location.href='?do=buycart';
+            })
+        }
+    </script>
