@@ -20,7 +20,7 @@ include_once "../base.php";
         <td><?=$row['qt'];?></td>
         <td><?=($row['sh']==1)?"販售中":"已下架";?></td>
         <td>
-            <button>修改</button>
+            <button onclick="location.href='?do=edit_goods&id=<?=$row['id'];?>'">修改</button>
             <button onclick="del('goods',<?=$row['id'];?>)">刪除</button>
             <button onclick="sh(this,<?=$row['id'];?>,1)">上架</button>
             <button onclick="sh(this,<?=$row['id'];?>,0)">下架</button>
