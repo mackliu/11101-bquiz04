@@ -34,7 +34,7 @@ if (empty($_SESSION['cart'])) {
                 <td><?= $row['no']; ?></td>
                 <td><?= $row['name']; ?></td>
                 <td><?= $qt; ?></td>
-                <td><?= $row['spec']; ?></td>
+                <td><?= $row['qt']; ?></td>
                 <td><?= $row['price']; ?></td>
                 <td><?= $row['price'] * $qt; ?></td>
                 <td>
