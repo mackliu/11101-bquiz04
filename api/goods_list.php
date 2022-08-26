@@ -22,11 +22,27 @@ include_once "../base.php";
         <td>
             <button>修改</button>
             <button onclick="del('goods',<?=$row['id'];?>)">刪除</button>
-            <button onclick="sh(<?=$row['id'];?>,'on')">上架</button>
-            <button onclick="sh(<?=$row['id'];?>'off')">下架</button>
+            <button onclick="sh(this,<?=$row['id'];?>,1)">上架</button>
+            <button onclick="sh(this,<?=$row['id'];?>,0)">下架</button>
         </td>
     </tr>
     <?php
     }
     ?>
 </table>
+<script>
+    function sh(dom,id,sh){
+        $.post('./api/sh.php',{id,sh},()=>{
+            switch(sh){
+                case 1:
+                    $(dom).parent().prev().text('販售中')
+                break;
+                case 0:
+                    $(dom).parent().prev().text('己下架')    
+                break;
+
+            }
+        //     location.reload();
+        })
+    }
+</script>
