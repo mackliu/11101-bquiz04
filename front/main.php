@@ -21,7 +21,9 @@ foreach($rows as $row){
 ?>
 <div style="width:90%;margin:auto;display:flex" class="pp">
     <div style="padding:1rem;width:35%;text-align:center">
-        <img style="width:80%" src="./upload/<?=$row['img'];?>" alt="">
+        <a href="?do=detail&id=<?=$row['id'];?>">
+            <img style="width:80%" src="./upload/<?=$row['img'];?>" alt="">
+        </a>
     </div>
     <div style="width:65%">
         <div class="tt"><?=$row['name'];?></div>
