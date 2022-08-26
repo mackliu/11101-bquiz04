@@ -1,6 +1,5 @@
-<?php include_once "base.php";?>
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php include_once "base.php"; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0039) -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -26,35 +25,51 @@
                 <a href="?do=look">購物流程</a> |
                 <a href="?do=buycart">購物車</a> |
                 <?php
-                if(isset($_SESSION['mem'])){
+                if (isset($_SESSION['mem'])) {
                     echo "<a href='#' onclick=logout('mem')>登出</a> |";
-
-                }else{
+                } else {
                     echo "<a href='?do=login'>會員登入</a> |";
-
                 }
 
-                if(isset($_SESSION['admin'])){
+                if (isset($_SESSION['admin'])) {
                     echo "<a href='#' onclick=location.href='back.php'>返回管理</a>";
-
-                }else{
+                } else {
                     echo "<a href='?do=admin'>管理登入</a>";
-
                 }
-                
-                
+
+
 
 
                 ?>
-                
-            </div> 
+
+            </div>
             <marquee>
                 情人節特惠活動 &nbsp; 年終特賣會開跑了
             </marquee>
         </div>
         <div id="left" class="ct">
             <div style="min-height:400px;">
-            <a href="#">全部商品(8)</a>
+                <div class='ww'>
+                    <a href="#">全部商品(8)</a>
+                </div>
+                <?php
+                $bigs = $Type->all(['parent' => 0]);
+                foreach ($bigs as $big) {                
+                    echo " <div class='ww'>";
+                    echo "<a>{$big['name']}</a>";
+                    
+                        $mids = $Type->all(['parent' => $big['id']]);
+                        if (!empty($mids)) {
+                            foreach ($mids as $mid) {
+                                echo "<div class='s'>";
+                                echo "    <a style='background:lightgreen;color:darkgreen'>{$mid['name']}</a>";
+                                echo "</div>";
+                            }
+                        }
+                        
+                    echo "</div>";
+                }
+                ?>
             </div>
             <span>
                 <div>進站總人數</div>
@@ -63,19 +78,19 @@
             </span>
         </div>
         <div id="right">
-        <?php 
-        $do=$_GET['do']??'main';
-        $file="./front/".$do.".php";
-        if(file_exists($file)){
+            <?php
+            $do = $_GET['do'] ?? 'main';
+            $file = "./front/" . $do . ".php";
+            if (file_exists($file)) {
                 include $file;
-        }else{
+            } else {
                 include "./front/main.php";
-        }
-        ?>
+            }
+            ?>
 
         </div>
         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
-            <?=$Bot->find(1)['bot'];?> </div>
+            <?= $Bot->find(1)['bot']; ?> </div>
     </div>
 
 </body>

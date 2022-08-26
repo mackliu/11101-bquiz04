@@ -35,6 +35,22 @@ body
 	margin:10px auto 10px auto;
 	color:#65350A;
 }
+
+.s
+{
+	display:none;
+}
+
+div.ww:hover > div.s
+{
+	display:block;
+}
+
+.sb button
+{
+	font-size:12px;
+}
+
 .ct
 {
 	text-align:center;
@@ -96,16 +112,4 @@ input[type=text],input[type=password],input[type=submit],button,.button,input[ty
 input[type=text],input[type=password]
 {
 	width:170px;
-}
-.s
-{
-	display:none;
-}
-div.ww:hover > div.s
-{
-	display:block;
-}
-.sb button
-{
-	font-size:12px;
 }
