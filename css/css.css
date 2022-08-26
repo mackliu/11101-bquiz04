@@ -62,6 +62,7 @@ div.ww:hover > div.s
 	padding:2%;
 	height:450px;
 	border:#000 1px solid;
+	overflow:auto;
 }
 #bottom
 {

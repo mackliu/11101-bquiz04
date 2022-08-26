@@ -8,14 +8,27 @@
         <td>下單時間</td>
         <td>操作</td>
     </tr>
+    <?php
+
+$rows=$Order->all();
+foreach($rows as $row){
+
+?>
     <tr class="pp ct">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
         <td>
-            <button>刪除</button>
+            <a href="?do=detail&id=<?=$row['id'];?>">
+                <?=$row['no'];?>
+            </a>
+        </td>
+        <td><?=$row['total'];?></td>
+        <td><?=$row['acc'];?></td>
+        <td><?=$row['name'];?></td>
+        <td><?=$row['orddate'];?></td>
+        <td>
+            <button onclick="del('ord',<?=$row['id'];?>)">刪除</button>
         </td>
     </tr>
+    <?php
+    }
+    ?>
 </table>
