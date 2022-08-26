@@ -60,7 +60,7 @@ div.ww:hover > div.s
 	display:inline-block;
 	width:70%;
 	padding:2%;
-	min-height:450px;
+	height:450px;
 	border:#000 1px solid;
 }
 #bottom

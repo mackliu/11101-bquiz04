@@ -15,10 +15,7 @@ if($_GET['type']!=0){
 }
 
 ?>
-
-
 <h2><span><?=$typebig;?></span><span><?=$typemid??'';?></span></h2> 
-
 <?php
 foreach($rows as $row){
 ?>
@@ -28,9 +25,9 @@ foreach($rows as $row){
     </div>
     <div style="width:65%">
         <div class="tt"><?=$row['name'];?></div>
-        <div>價錢:</div>
-        <div>規格:</div>
-        <div>簡介</div>
+        <div>價錢:<?=$row['price'];?></div>
+        <div>規格:<?=$row['spec'];?></div>
+        <div>簡介:<?=mb_substr($row['intro'],0,25);?>...</div>
     </div>
 </div>
 <?php
